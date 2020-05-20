@@ -1,0 +1,44 @@
+//declare LEDs
+int green = 2;
+int orange = 3;
+int red = 4; 
+
+//declare button
+int btnPedestrian = 6;
+
+
+void setup() {
+  //setting the LED pins to output
+  pinMode(green, OUTPUT);
+  pinMode(orange, OUTPUT);
+  pinMode(red, OUTPUT);
+  
+  //turn the LEDs off
+  digitalWrite(green, LOW);
+  digitalWrite(orange, LOW);
+  digitalWrite(red, LOW);
+  
+  //setting the buttons to input
+  pinMode(btnPedestrian, INPUT);
+  
+  //for the serial monitor
+  Serial.begin(9600);
+}
+
+void loop(){
+  //put your main code here
+  digitalWrite(red, LOW);
+  digitalWrite(green, HIGH);
+  //Serial.printIn("GREEN");
+  delay(3000);
+  
+  digitalWrite(green, LOW);
+  digitalWrite(orange, HIGH);
+  //Serial.printIn("\nORANGE");
+  delay(500);
+  
+  digitalWrite(orange, LOW);
+  digitalWrite(red, HIGH);
+  //Serial.printIn("RED");
+  delay(2500);
+}
